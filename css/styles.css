@@ -26,7 +26,9 @@ ol {
     --another-white: #F5F4FA;
     --border-header-color: #ECECEC;
     --border-items-color: #EEEEEE;
-
+    --background-color: rgba(47, 48, 58, 0.4);
+    --icon-color: #AFB1B8;
+    --footer-social: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -105,11 +107,25 @@ body {
 }
 
 .mailto,.tel {
+    display: flex;
+    align-items: center;
     color: var(--grey-color)
 }
 
 .link {
     text-decoration: none;
+}
+
+.icon-mail, .icon-tel {
+    margin-right: 10px;
+    fill: var(--grey-color);
+}
+
+.mailto:hover .icon-mail,
+.tel:hover .icon-tel,
+.mailto:focus .icon-mail,
+.tel:focus .icon-tel {
+    fill: var(--blue-color);
 }
 
 /* стилі першої секції */
@@ -119,6 +135,8 @@ body {
     padding-top: 200px;
     padding-bottom: 200px;
     text-align: center;
+    background-image: linear-gradient(var(--background-color), var(--background-color)), url("../images/background.jpg");
+    background-size: cover;
 }
 
 .effect-solut {
@@ -169,13 +187,32 @@ body {
 .secd-sect-list {
     list-style: none;
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 30px;
 }
 
 .secd-sect-item {
-    flex-basis: calc((100%-90px)/4);
+    flex-basis: calc((100% - 90px) / 4);
 }
+
+.fc-icon-bg {
+    display: flex;
+    width: 270px;
+    height: 120px;
+    background: var(--another-white);
+    border-radius: 4px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.icon-antenna, 
+.icon-clock,
+.icon-diagram,
+.icon-astronaut {
+    display: flex;
+    margin: 25px 100px;
+}
+
 
 .secd-sect-title {
     font-weight: 700;
@@ -257,7 +294,8 @@ img {
 }
 
 .name-prof-teammate {
-    padding-top: 30PX;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .name-teammate {
@@ -274,7 +312,90 @@ img {
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
+    margin-bottom: 16px;
 }
+
+.social-list {
+    list-style: none;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--white-color)
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: var(--blue-color);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+    fill: var(--white-color);
+}
+
+.social-list-icon {
+    fill: var(--icon-color);
+}
+
+
+
+/* стилі п'ятої секції */
+
+ .five-section {
+     padding-top: 94px;
+     padding-bottom: 94px;
+ }
+
+ .our-clients {
+     font-weight: 700;
+     font-size: 36px;
+     line-height: 1.17;
+     text-align: center;
+     color: var(--dark-color);
+     margin-bottom: 50px;
+ }
+
+ .five-sec-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+ }
+
+ .five-sec-item {
+    display: flex;
+    width: 170px;
+    height: 92px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+.client-list-icon {
+    fill: var(--icon-color);
+}
+
+.five-sec-item:hover,
+.five-sec-item:focus {
+    border-color: var(--blue-color);
+}
+
+.client-list-link:hover .client-list-icon,
+.client-list-link:focus .client-list-icon {
+    fill: var(--blue-color);
+}
+
 
 /* стилі футера */
 
@@ -313,6 +434,49 @@ img {
 
 .footer-list-item:not(:last-child) {
     margin-bottom: 9px;
+}
+
+.footer-containers {
+    display: flex;
+
+}
+
+.footer-left-part {
+ margin-right: 70px;
+}
+
+.footer-join-us {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white-color);
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-social-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--footer-social);
+}
+
+.footer-list-icon {
+    fill: var(--white-color);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--blue-color);
 }
 
 /* стилі сторінки портфоліо */
@@ -373,6 +537,13 @@ img {
 
 .portfolio-list-item {
     flex-basis: calc((100% - 60px) / 3);
+}
+
+.portfolio-list-item:hover,
+.portfolio-list-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-list-title {
