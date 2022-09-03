@@ -110,7 +110,8 @@ body {
 .mailto,.tel {
     display: flex;
     align-items: center;
-    color: var(--grey-color)
+    color: var(--grey-color);
+    fill: currentColor;
 }
 
 .link {
@@ -119,7 +120,6 @@ body {
 
 .icon-mail, .icon-tel {
     margin-right: 10px;
-    fill: var(--grey-color);
 }
 
 .mailto:hover .icon-mail,
